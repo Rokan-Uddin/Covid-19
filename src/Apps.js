@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Apps extends React.Component {
   constructor() {
@@ -23,11 +24,44 @@ class Apps extends React.Component {
 
   render() {
     return (
-      <div className="App">
-      {this.state.confirmed}
-      {this.state.recovered}
-      {this.state.deaths}
+      <div className="container">
+        <div className="row m-5">
+          <h1 className="text-center">COVID-19 UPDATE</h1>
+        </div>
+        <div className="row">
+      <div className="col-sm-4">
+          <div className="card">
+          <div className="card-body">
+            <h5 className="card-title text-center">Confirmed</h5>
+            <p className="card-text text-center">{this.state.confirmed}</p>
+          </div>
+          </div>
+
       </div>
+      <div className="col-sm-4">
+
+          <div className="card">
+          <div className="card-body">
+            <h5 className="card-title text-center">Recovered</h5>
+            <p className="card-text text-center">{this.state.recovered}</p>
+          </div>
+          </div>
+        
+      </div>
+      <div className="col-sm-4" >
+                        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title text-center">Deaths</h5>
+            <p className="card-text text-center">{this.state.deaths}</p>
+          </div>
+          </div>
+
+      </div>
+    </div>
+
+     
+      </div>
+        
     );
   }
 }
