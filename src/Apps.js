@@ -1,13 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import moment from 'moment';
 class Apps extends React.Component {
   constructor() {
     super();
     this.state = {
       confirmed: undefined,
       recovered:undefined,
-      deaths:undefined
+      deaths:undefined,
+      lastupdate:undefined
     };
   }
  async componentDidMount() {
@@ -18,15 +19,20 @@ class Apps extends React.Component {
       this.setState({
         recovered: response.recovered.value,
         confirmed:response.confirmed.value,
-        deaths:response.deaths.value
+        deaths:response.deaths.value,
+        lastupdate:response.lastUpdate
       });    
   };
 
   render() {
     return (
       <div className="container">
-        <div className="row m-5">
-          <h1 className="text-center">COVID-19 UPDATE</h1>
+        <div className="row m-5"> 
+          <div className="col-sm-12 text-center"> 
+         <h1> Coronavirus (COVID-19) statistics </h1>
+         <h5> Global </h5>
+         <p> {moment(this.state.lastupdate).format("dddd, MMMM Do YYYY, h:mm:ss a")} </p>
+          </div>
         </div>
         <div className="row">
       <div className="col-sm-4">
