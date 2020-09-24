@@ -27,27 +27,28 @@ class SelectBox extends React.Component {
     const {items } = this.state;
     	return( 
 	        <div className="row"> 
-          <div className="col-sm-6 text-center bb"> 
-         
-         <h3 > {this.props.country} </h3>
-         <p> {moment(this.props.lastupdate).format("dddd, MMMM Do YYYY, h:mm:ss a")} </p>
-          </div>
-          <div className="col-sm-6">
-          <form >
-        <label>
-          Pick your country : 
-        <select defaultValue="" onChange={this.props.handleChange} >
-        <option className="text-center" value="Global">Global </option>
-          {items.map(item => ( 
-            <option value={item.name}>
-              {item.name} 
-            </option>
-          ))}
-        </select>
-        </label>
+            <div className="col-sm-6 text-center"> 
+             <h3 className="text-left ml-5" > {this.props.country} Cases </h3>
+             <p className="text-left ml-5 text-secondary"> Updated  {moment(this.props.lastupdate).format("MM Do YYYY, h:mm:ss a")} </p>
+            </div>
+
+            <div className="col-12 col-sm-6 text-center">
+            <form >
+                <label className="mr-4">
+                   Pick your country : 
+               </label>
+             <select defaultValue="" onChange={this.props.handleChange} >
+               <option className="text-center" value="Global">Global </option>
+                {items.map(item => ( 
+                <option value={item.name}>
+                  {item.name} 
+                </option>
+              ))}
+            </select>
         
-      </form>
-          </div>
+          
+        </form>
+            </div>
         </div>
         );
    }

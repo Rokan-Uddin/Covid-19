@@ -7,10 +7,10 @@ class Apps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      confirmed: undefined,
-      recovered:undefined,
-      deaths:undefined,
-      lastupdate:undefined,
+      confirmed: 0,
+      recovered:0,
+      deaths:0,
+      lastupdate:0,
       country:"Global"
     };
     this.handleChange = this.handleChange.bind(this);
@@ -59,10 +59,8 @@ handleChange (event) {
         <Card confirmed={this.state.confirmed} 
               recovered={this.state.recovered} 
               deaths={this.state.deaths}
+              a={44444}
               />
-
-
-     
       </div>
         
     );
