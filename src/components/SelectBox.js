@@ -29,7 +29,7 @@ class SelectBox extends React.Component {
 	        <div className="row"> 
             <div className="col-sm-6 text-center"> 
              <h3 className="text-left ml-5" > {this.props.country} Cases </h3>
-             <p className="text-left ml-5 text-secondary"> Updated  {moment(this.props.lastupdate).format("MM Do YYYY, h:mm:ss a")} </p>
+             <p className="text-left ml-5 text-secondary"> Updated  {moment(this.props.lastupdate).format("MMM Do YYYY, h:mm a")} </p>
             </div>
 
             <div className="col-12 col-sm-6 text-center">
